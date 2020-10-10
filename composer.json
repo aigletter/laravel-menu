@@ -1,0 +1,49 @@
+{
+    "name": "aigletter/laravel-menu",
+    "description": "Laravel menu",
+    "type": "library",
+    "require": {
+        "illuminate/database": "^7.0",
+        "aigletter/menu": "dev-master",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "*",
+        "phpunit/phpunit": "8.5",
+        "vlucas/phpdotenv": "^4.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yurii Orlyk",
+            "email": "aigletter@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Aigletter\\LaravelMenu\\LaravelMenuServiceProvider"
+            ],
+            "aliases": {
+                "LaravelMenu": "Aigletter\\LaravelMenu\\Facades\\LaravelMenu"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Aigletter\\LaravelMenu\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Aigletter\\LaravelMenu\\Test\\": "tests"
+        }
+    },
+    "repositories": [
+        {
+            "type": "git@github.com:aigletter/menu.git",
+            "url": "../menu"
+        }
+    ]
+}

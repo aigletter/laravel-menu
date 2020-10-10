@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class AddColumnsToMenuItemsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('menu_items', function (Blueprint $table) {
+            $table->string('parent_id')->nullable()->after('url');
+            $table->integer('level')->unsigned()->default(1)->after('parent_id');
+            $table->integer('order')->unsigned()->default(1)->after('level');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('menu_items', function (Blueprint $table) {
+            $table->dropColumn('parent_id');
+            $table->dropColumn('level');
+            $table->dropColumn('order');
+        });
+    }
+}
