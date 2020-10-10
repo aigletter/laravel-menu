@@ -123,6 +123,6 @@ class LaravelMenu extends MenuService
 
         $renderer = new TemplateRenderer($template);
 
-        $renderer->render($menu);
+        return $renderer->render($menu);
     }
 }
