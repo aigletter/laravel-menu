@@ -42,8 +42,8 @@
     },
     "repositories": [
         {
-            "type": "git@github.com:aigletter/menu.git",
-            "url": "../menu"
+            "type": "git",
+            "url": "git@github.com:aigletter/menu.git"
         }
     ]
 }
